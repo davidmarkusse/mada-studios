@@ -1,0 +1,314 @@
+/*
+ * Stylesheet for the MADA – Studios website
+ *
+ * This sheet defines the global styles, layout rules and
+ * component styling used across the site. The palette
+ * takes its cues from the neutral, earthy tones of the
+ * sculptures and paintings depicted in the site images.
+ */
+
+/* Reset and base styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f8f8f8;
+    /* Constrain the width of the page content and center it */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Navigation */
+.navbar {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar h1 a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.navbar nav a {
+    color: #333;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.navbar nav a:hover,
+.navbar nav a.active {
+    color: #C39A75;
+}
+
+.navbar nav a.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #C39A75;
+}
+
+/* Hero section */
+.hero {
+    background-image: url('../images/hero.png');
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+}
+
+/* Dark overlay for readability */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 0 20px;
+}
+
+.hero-content h2 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #C39A75;
+    color: #ffffff;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #a88464;
+}
+
+/* Sections */
+.section {
+    padding: 60px 0;
+}
+
+.section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+/* Grid layouts for news and shop */
+.news-grid,
+.shop-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.card img {
+    width: 100%;
+    display: block;
+}
+
+.card .content {
+    padding: 15px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.card p {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 10px;
+    flex-grow: 1;
+}
+
+.card .price {
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.card a.more,
+.card a.btn {
+    align-self: flex-start;
+    padding: 8px 16px;
+    background-color: #C39A75;
+    color: #ffffff;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.card a.more:hover,
+.card a.btn:hover {
+    background-color: #a88464;
+}
+
+/* About page styles */
+.about-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.about-content h2 {
+    text-align: left;
+}
+
+.about-content p {
+    margin-bottom: 15px;
+    color: #555;
+    font-size: 1rem;
+}
+
+/* Contact page */
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.contact-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-container label {
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.contact-container input,
+.contact-container textarea {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    resize: vertical;
+}
+
+.contact-container input:focus,
+.contact-container textarea:focus {
+    outline: none;
+    border-color: #C39A75;
+}
+
+.contact-container button {
+    width: fit-content;
+    background-color: #C39A75;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.contact-container button:hover {
+    background-color: #a88464;
+}
+
+/* Footer */
+footer {
+    margin-top: 40px;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #777;
+    background-color: #ffffff;
+    border-top: 1px solid #eee;
+}
+
+footer .social {
+    margin-top: 10px;
+}
+
+footer .social a {
+    margin: 0 6px;
+    color: #777;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+footer .social a:hover {
+    color: #C39A75;
+}
+
+@media (max-width: 768px) {
+    .hero-content h2 {
+        font-size: 2.2rem;
+    }
+    .hero-content p {
+        font-size: 1rem;
+    }
+    .navbar nav a {
+        margin-left: 15px;
+    }
+}
